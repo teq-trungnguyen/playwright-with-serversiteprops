@@ -11,12 +11,12 @@ const { defineConfig, devices } = require("@playwright/test");
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  webServer: {
-    command: "npm run dev",
-    url: "http://localhost:3000",
-    reuseExistingServer: true,
-    timeout: 120 * 1000,
-  },
+  // webServer: {
+  //   command: "npm run dev",
+  //   url: "http://localhost:3000",
+  //   reuseExistingServer: true,
+  //   timeout: 120 * 1000,
+  // },
   testDir: "./e2e",
   /* Run tests in files in parallel */
   fullyParallel: true,
