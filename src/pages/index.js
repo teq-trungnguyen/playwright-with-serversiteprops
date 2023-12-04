@@ -3,15 +3,7 @@ import { useEffect, useState } from "react";
 
 //FOR CLIENT
 
-// export const getServerSideProps = async () => {
-//   const res = await fetch(
-//     "https://api.eazy-mock.teqn.asia/mock/cacf0e7e-f495-40a4-910f-4cc5441e87ac/64/animals"
-//   );
-//   const animals = await res.json();
-//   return { props: { animals } };
-// };
-
-// export default function Home({ animals }) {
+// export default function Home() {
 //   const [animals, setAnimals] = useState([]);
 //   useEffect(() => {
 //     const shiba = async () => {
