@@ -1,7 +1,7 @@
 // import { expect } from "@playwright/test";
 import test from "./fixture";
 
-test("Bulbasaur", async ({ page, port, rest, requestInterceptor }) => {
+const mockApi = (rest, requestInterceptor) => {
   const resBody = [
     {
       src: "https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?cs=srgb&dl=pexels-pixabay-247502.jpg&fm=jpg",
@@ -22,6 +22,13 @@ test("Bulbasaur", async ({ page, port, rest, requestInterceptor }) => {
       (req, res, ctx) => res(ctx.json(resBody))
     )
   );
+};
+
+test.beforeEach(async ({ rest, requestInterceptor }) => {
+  await mockApi(rest, requestInterceptor);
+});
+
+test("Bulbasaur", async ({ page, port }) => {
   await page.goto(`http://localhost:${port}/`);
   await page.waitForTimeout(5000);
 });
